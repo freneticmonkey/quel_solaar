@@ -76,7 +76,7 @@ project "deceive"
 
    includedirs { "Gather", "Betray", "Forge", "Enough", "Verse", "Seduce", "Relinquish"}
 
-   files { "Decive/**.h", "Decive/**.c" }
+   files { "Deceive/**.h", "Deceive/**.c" }
    
    filter "configurations:Debug"
       symbols "On"
@@ -166,7 +166,7 @@ project "loq_auriou"
    
    libdirs { "build" }
    links { "forge", "imagine", "betray", "enough", "deceive", "seduce", "relinquish", "persuade" }
-   includedirs { "Forge", "Imagine", "Betray", "Enough", "Verse", "Seduce", "Relinquish", "Decive", "Persuade" }
+   includedirs { "Forge", "Imagine", "Betray", "Enough", "Verse", "Seduce", "Relinquish", "Deceive", "Persuade" }
 
    files { "Loq_Airou/**.h", "Loq_Airou/**.c" }
    
