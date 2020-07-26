@@ -7,6 +7,7 @@
 */
 
 #include "forge.h"
+#include "enough.h"
 
 #define PERSUADE_ENABLED
 

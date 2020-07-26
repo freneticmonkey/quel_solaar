@@ -202,14 +202,14 @@ void r_shader_parse_clean(char *shader, char *output, RShaderInput *input, uint 
 	char *add = "InstanceData.b[gl_InstanceID + gl_BaseInstanceARB].";
 	if(fragment_add)
 	{
-		char *in = "in flat int relinquish_instance_id;\n\n";
+		char *in = "flat in int relinquish_instance_id;\n\n";
 		for(l = 0; in[l] != 0; l++)
 			output[j++] = in[l];
 		add = "InstanceData.b[relinquish_instance_id].";
 	}
 	if(pass_to_fragment)
 	{
-		char *in = "out flat int relinquish_instance_id;\n\n";
+		char *in = "flat out int relinquish_instance_id;\n\n";
 		for(l = 0; in[l] != 0; l++)
 			output[j++] = in[l];
 	}
@@ -462,7 +462,7 @@ uint shader_parse_input_print(char *output, uint output_size, RShaderInput *inpu
 									if(input[i].qualifyer == R_SIQ_BLOCK && input[i].block == k)
 										break;
 								sprintf(uniform_footer,	"};\n\n"
-														"layout (std140, binding = 0) uniform %s {\n"
+														"layout (std140) uniform %s {\n"
 														"\tInstanceStruct b[%u];\n"
 														"}InstanceData;\n\n", input[i].name, input[i].array_length);
 								for(j = 0; uniform_footer[j] != 0 && pos < output_size; j++)
@@ -470,7 +470,7 @@ uint shader_parse_input_print(char *output, uint output_size, RShaderInput *inpu
 							}else
 							{
 								char *buffer_footer =  "};\n\n"
-														"layout (std140, binding = 0) buffer InstanceBlock {\n"
+														"layout (std140) buffer InstanceBlock {\n"
 														"\tInstanceStruct b[];\n"
 														"}InstanceData;\n\n";
 								for(j = 0; buffer_footer[j] != 0 && pos < output_size; j++)

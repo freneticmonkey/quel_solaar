@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "forge.h"
-#include "relinquish.h"
+//#include "relinquish.h"
 
 typedef struct{
 	uint parent;

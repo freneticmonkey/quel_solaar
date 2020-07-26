@@ -3,7 +3,7 @@
 
 #include "seduce.h"
 #include "s_draw_3d.h"
-#include "gather.h"
+#include "gather2.h"
 
 typedef enum{
 	SEDUCE_SET_POINT,

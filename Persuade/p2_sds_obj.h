@@ -1,3 +1,5 @@
+#include "p2_sds_array.h"
+
 typedef struct{
 	uint32	material;
 	uint32  material_version;
@@ -76,12 +78,44 @@ typedef struct{
 	//	PDispMode mode;
 		pgreal	*draw_normals;
 	}normal;
+	struct
+	{
+		egreal *displacement;
+		boolean live;
+		uint32 node_version;
+		uint32 tree_version;
+	}displacement;
 	struct{
-		void		*array;
+		PRenderArray *array;
 		uint		array_count;
 		uint		*version;
 		uint		data_version;
 	}param;
+	struct
+	{
+		struct
+		{
+			boolean layers;
+			boolean bones;
+		} play;
+		struct
+		{
+			uint 		data_version;
+			PMeshLayer 	*layers;
+			uint 		layer_count;
+		} layers;
+		struct
+		{
+			uint *bonereference;
+			uint *ref_count;
+			egreal *boneweight;
+		} bones;
+		egreal		scale[3];
+		uint 		seconds;
+		uint 		fractions;
+		egreal 		*cvs;
+		uint 		cv_count;
+	}anim;
 }PMesh;
 
 extern pgreal	p_sds_edge_tesselation_global_func(pgreal *v_0, pgreal *v_1, pgreal *e_0, pgreal *eay);

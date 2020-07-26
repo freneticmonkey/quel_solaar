@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "forge.h"
 #include "r_include.h"
-#include "relinquish.h"
+//#include "relinquish.h"
 
 /*
 void sui_set_blend_gl(uint source, uint destination)

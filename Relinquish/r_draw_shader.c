@@ -548,7 +548,7 @@ void *r_shader_create(char *debug_output, uint output_size, char **shaders, uint
 		i--;
 		for(j = 0; j < input_count; j++)
 		{
-			if(input[j].qualifyer == R_SIQ_INOUT && input[j].stages[i] && input[j].stages[i - 1])
+			if(input[j].qualifyer == R_SIQ_INOUT && input[j].stages[i] && (i > 0) && input[j].stages[i - 1])
 			{
 				names[output_count++] = input[j].name;
 				shader->buffer_input_component_types[shader->buffer_output_component_count++] = input[j].type;

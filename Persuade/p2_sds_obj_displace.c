@@ -4,7 +4,7 @@
 #include "p2_sds_geo.h"
 #include "p2_sds_table.h"
 #include "p2_sds_obj.h"
-#include "p2_shader.h"
+//#include "p2_shader.h"
 
 #include <math.h>
 

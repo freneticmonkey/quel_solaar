@@ -1,0 +1,4 @@
+projects/*
+build/*
+host_id.rsa
+*_std*.txt

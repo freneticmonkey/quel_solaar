@@ -6,7 +6,7 @@
 #include "enough.h"
 #include "seduce.h"
 #include "s_draw_3d.h"
-#include "gather.h"
+#include "gather2.h"
 
 typedef struct{
 	char address[48];
@@ -220,7 +220,6 @@ void (*deceive_draw_func)(void *user_pointer) = NULL;
 void *deceive_user_pointer = NULL;
 
 void d_draw_login(BInputState *input);
-void d_init_master(void);
 
 void deceive_set_intro_draw_func(void (*draw_func)(void *user_pointer), void *user_pointer)
 {
@@ -254,7 +253,6 @@ void deceive_intro_handler(BInputState *input, void *application_handler_func)
 	uint i, j;
 	if(init == FALSE)
 	{
-		d_init_master();
 		deceive_load_bookmarks(NULL);
 		init = TRUE;
 	}
